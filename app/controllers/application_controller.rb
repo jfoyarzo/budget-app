@@ -5,6 +5,6 @@ class ApplicationController < ActionController::Base
   private
 
   def select_layout
-    @current_user.present? ? 'application' : 'no_hero'
+    user_signed_in? ? 'application' : 'no_hero'
   end
 end
