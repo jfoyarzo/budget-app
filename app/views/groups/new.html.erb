@@ -2,7 +2,7 @@
   <% if @group.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(@group.errors.count, "error") %>
-        prohibited this recipe from being saved:</h2>
+        prohibited this group from being saved:</h2>
 
       <ul>
         <% @group.errors.each do |error| %>
