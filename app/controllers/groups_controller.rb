@@ -1,12 +1,26 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_group, only: :show
 
   def index
     @groups = current_user.groups
   end
 
-  def show; end
+  def new
+    @group = Group.new
+  end
+
+  def create
+    @group = Group.new(group_params)
+    @group.user = current_user
+
+    respond_to do |f|
+      if @group.save
+        f.html { redirect_to groups_path, notice: 'The Category was created successfully.' }
+      else
+        f.html { render :index, status: :unprocessable_entity }
+      end
+    end
+  end
 
   private
 
