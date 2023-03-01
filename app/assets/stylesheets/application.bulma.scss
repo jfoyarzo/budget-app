@@ -20,6 +20,7 @@
 // $fullhd-enabled: false;
 
 // Update some of Bulma's component variables
+$box-radius: 2px;
 // $body-background-color: $beige-lighter;
 // $control-border-width: 2px;
 // $input-border-color: transparent;
@@ -37,3 +38,25 @@
 // @import "bulma/sass/layout/section.sass";
 
 @import 'bulma/bulma';
+
+body {
+  height: 100vh;
+}
+
+.category-list {
+  height: 85%;
+  overflow-y: auto;
+}
+
+.btn-container {
+  height: 10%;
+}
+
+.category-icon {
+  height: 68px;
+  width: 96px;
+}
+
+.bulma-block-mixin {
+  @include block(1rem);  /* stylelint-disable-line */
+}

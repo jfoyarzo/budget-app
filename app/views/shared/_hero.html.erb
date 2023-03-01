@@ -2,7 +2,7 @@
   <div class="level is-mobile has-text-white">
     <div class="level-left">
       <div class="level-item">
-        <%= link_to 'Back', groups_path, class: 'button is-small' %>
+          <%= link_to 'Back', groups_path, class: "button is-small #{'is-invisible' if current_page?(groups_path)}" %>
       </div>
     </div>
     <div class="level-center">

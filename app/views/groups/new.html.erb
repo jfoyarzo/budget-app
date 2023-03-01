@@ -1,0 +1,28 @@
+<%= form_with model: @group do |form| %>
+  <% if @group.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(@group.errors.count, "error") %>
+        prohibited this recipe from being saved:</h2>
+
+      <ul>
+        <% @group.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name, style: "display: block", class: "label" %>
+    <%= form.text_field :name, class: "input" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :icon, style: "display: block", class: "label" %>
+    <%= form.url_field :icon, class: "input" %>
+  </div>
+
+  <div>
+    <%= form.submit class: "button is-primary" %>
+  </div>
+<% end %>
