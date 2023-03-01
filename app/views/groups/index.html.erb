@@ -1,0 +1,10 @@
+<section class="section has-background-grey-light">
+  <% unless @groups.present? %>
+    <div class="box">
+      <p>You have no categories yet, start by adding one with the button below</p>
+    </div>
+  <% end %>
+</section>
+<div class="is-flex is-justify-content-center p-2">
+<%= link_to 'Add Category', new_group_path, class: 'button is-large is-fullwidth' %>
+</div>
