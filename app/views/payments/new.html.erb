@@ -1,0 +1,28 @@
+<%= form_with(model: @payment, url: group_payments_path(params[:group_id])) do |form| %>
+  <% if @payment.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(@payment.errors.count, "error") %>
+        prohibited this payment from being saved:</h2>
+
+      <ul>
+        <% @payment.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name, style: "display: block", class: "label" %>
+    <%= form.text_field :name, class: "input" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :amount, style: "display: block", class: "label" %>
+    <%= form.number_field :amount, step: :any, class: "input" %>
+  </div>
+
+  <div>
+    <%= form.submit class: "button is-primary" %>
+  </div>
+<% end %>
