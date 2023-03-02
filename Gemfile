@@ -71,3 +71,5 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
+
+gem "erb-formatter", "~> 0.4.2"

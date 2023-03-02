@@ -1,0 +1,36 @@
+<% provide(:title, 'Categories') %>
+
+<section class="section has-background-grey-light category-list">
+  <% unless @groups.present? %>
+    <div class="box">
+      <p>You have no categories yet, start by adding one with the button below</p>
+    </div>
+  <% end %>
+  <% @groups.each do |group| %>
+    <%= link_to group_payments_path(group.id), class: "box bulma-block-mixin" do %>
+        <article class="media is-flex is-align-items-center">
+          <figure class="media-left">
+            <p class="image category-icon">
+              <img src=<%= group.icon %>>
+            </p>
+          </figure>
+          <div class="media-content">
+            <div class="content">
+              <p>
+                <strong><%= group.name %></strong>
+              </p>
+            </div>
+            <div class="level is-mobile">
+              <div class="level-item">
+                <small>Payments total:
+                  <%= number_to_currency(group.payments.sum(:amount)) %></small>
+              </div>
+            </div>
+          </div>
+        </article>
+    <% end %>
+  <% end %>
+</section>
+<div class="is-flex px-2 py-4 btn-container">
+  <%= link_to "Add Category", new_group_path, class: "button is-large is-fullwidth" %>
+</div>
