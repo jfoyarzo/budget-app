@@ -2,12 +2,12 @@
   <div class="level is-mobile has-text-white">
     <div class="level-left">
       <div class="level-item">
-          <%= link_to 'Back', groups_path, class: "button is-small #{'is-invisible' if current_page?(groups_path)}" %>
+          <%= link_to 'Back', back_link(yield(:link)), class: "button is-small #{'is-invisible' if current_page?(groups_path)}" %>
       </div>
     </div>
     <div class="level-center">
       <div class="level-item">
-        <p><%= request.path.delete_prefix("/").capitalize %></p>
+        <p><%= navbar_title(yield(:title)) %></p>
       </div>
     </div>
     <div class="level-right">
