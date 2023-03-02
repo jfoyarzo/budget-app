@@ -1,3 +1,4 @@
+<% provide(:title, "Payments") %>
 <section class="section has-background-grey-light category-list">
   <% unless @payments.present? %>
     <div class="box">
@@ -6,7 +7,7 @@
     </div>
   <% end %>
   <% @payments.each do |payment| %>
-    <%= link_to group_payment_path(@group.id, payment.id), class: "box bulma-block-mixin" do %>
+    <div class="box box bulma-block-mixin">
       <div class="level is-mobile">
         <div class="level-left">
           <div class="level-item">
@@ -15,20 +16,23 @@
         </div>
         <div class="level-right">
           <div class="level-item">
-            <p>Amount: <%= number_to_currency(payment.amount) %></p>
+            <p>Amount:
+              <%= number_to_currency(payment.amount) %></p>
           </div>
         </div>
       </div>
       <div class="level is-mobile">
-      <div class="level-center">
-      <div class="level-item">
-      <p>Created at: <%= payment.created_at.to_fs(:short) %></p>
+        <div class="level-item">
+          <p>Created at:
+            <%= payment.created_at.to_fs(:short) %></p>
+        </div>
       </div>
-      </div>
-      </div>
-    <% end %>
+    </div>
   <% end %>
+
 </section>
 <div class="is-flex px-2 py-4 btn-container">
-  <%= link_to "Add Payment", new_group_payment_path, class: "button is-large is-fullwidth" %>
+  <%= link_to "Add Payment",
+  new_group_payment_path,
+  class: "button is-large is-fullwidth" %>
 </div>
