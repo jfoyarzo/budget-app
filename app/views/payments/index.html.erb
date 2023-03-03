@@ -1,0 +1,41 @@
+<% provide(:title, "Payments".upcase) %>
+<section class="section has-background-grey-lighter category-list">
+<div class="box has-text-grey-light"><small>Payments total:
+                  <%= number_to_currency(@payments.sum(:amount)) %></small></div>
+  <% unless @payments.present? %>
+    <div class="box has-text-grey-light">
+      <p>You have no payments yet, start by adding one using the button at the
+        bottom</p>
+    </div>
+  <% end %>
+  <% @payments.each do |payment| %>
+    <div class="box bulma-block-mixin">
+      <div class="level is-mobile has-text-grey-light">
+        <div class="level-left">
+          <div class="level-item">
+            <p><%= payment.name %></p>
+          </div>
+        </div>
+        <div class="level-right">
+          <div class="level-item">
+            <strong>Amount:
+              <%= number_to_currency(payment.amount) %></strong>
+          </div>
+        </div>
+      </div>
+      <hr class="m-1">
+      <div class="level is-mobile">
+        <div class="level-item has-text-grey-light">
+          <small>Created at:
+            <%= payment.created_at.to_fs(:short) %></small>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+</section>
+<div class="is-flex px-2 py-4 btn-container has-background-info">
+  <%= link_to "Add Payment",
+  new_group_payment_path,
+  class: "button is-large is-fullwidth is-outlined is-white" %>
+</div>

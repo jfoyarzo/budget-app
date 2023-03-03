@@ -1,0 +1,38 @@
+<% provide(:title, "New Category".upcase) %>
+
+<div
+  class="
+    form-wrapper
+    px-0
+    has-background-grey-lighter
+    has-text-centered
+    has-text-grey-light
+  "
+>
+  <%= form_with model: @group, class: "has-text-centered has-background-grey-lighter" do |form| %>
+    <% if @group.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(@group.errors.count, "error") %>
+          prohibited this group from being saved:</h2>
+
+        <ul>
+          <% @group.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.text_field :name, placeholder: "Name", class: "input px-3 mt-5" %>
+    </div>
+
+    <div class="field">
+      <%= form.url_field :icon, placeholder: "Icon (URL)", class: "input px-3" %>
+    </div>
+
+    <div>
+      <%= form.submit 'Create Category', class: "button is-primary is-medium mt-4" %>
+    </div>
+  <% end %>
+</div>

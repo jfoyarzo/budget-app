@@ -1,0 +1,24 @@
+<div class="hero is-medium is-primary p-2">
+  <div class="level is-mobile has-text-white">
+    <div class="level-left">
+      <div class="level-item">
+          <%= link_to 'Back', back_link(yield(:link)), class: "button is-small #{'is-invisible' if current_page?(groups_path)}" %>
+      </div>
+    </div>
+    <div class="level-center">
+      <div class="level-item">
+        <p><%= navbar_title(yield(:title)) %></p>
+      </div>
+    </div>
+    <div class="level-right">
+      <div class="level-item">
+        <%= button_to(
+              "Log Out",
+              destroy_user_session_path,
+              method: :delete,
+              class: "button is-small #{'is-invisible' unless user_signed_in?}"
+            ) %>
+      </div>
+    </div>
+  </div>
+</div>
