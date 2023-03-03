@@ -59,8 +59,9 @@
 
 
 ## 🚀 Live Demo <a name="live-demo"></a>
+<br>
 
-- [In progress...]
+[Live Demo on Render](https://budget-pal.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -186,6 +187,7 @@ If you like this project please consider giving it a star!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
+Original design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella).
 I would like to thank [Microverse](https://www.microverse.org/) for the opportunity.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
