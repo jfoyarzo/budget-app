@@ -69,7 +69,8 @@ body {
 
   form {
     input[type=email],
-    input[type=password] {
+    input[type=password],
+    input[type=text] {
       border: none !important;
       border-radius: 0;
       border-bottom: 2px solid $grey-light;
