@@ -1,40 +1,60 @@
-<% provide(:title, "New Payment") %>
+<% provide(:title, "New Payment".upcase) %>
 <% provide(:link, group_payments_path(params[:group_id])) %>
-<%= form_with(model: @payment, url: group_payments_path(params[:group_id])) do |form| %>
-  <% if @payment.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(@payment.errors.count, "error") %>
-        prohibited this payment from being saved:</h2>
 
-      <ul>
-        <% @payment.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<div
+  class="
+    form-wrapper
+    px-0
+    has-background-grey-lighter
+    has-text-centered
+    has-text-grey-light
+  "
+>
+  <%= form_with(model: @payment, url: group_payments_path(params[:group_id]), class: "has-text-centered has-background-grey-lighter") do |form| %>
+    <% if @payment.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(@payment.errors.count, "error") %>
+          prohibited this payment from being saved:</h2>
 
-  <div class="field">
-    <%= form.label :name, style: "display: block", class: "label" %>
-    <%= form.text_field :name, class: "input", required: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :amount, style: "display: block", class: "label" %>
-    <%= form.number_field :amount, step: :any, class: "input", required: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label "Choose Categories (at least one):", class: "label" %>
-    <% @groups.each do |item| %>
-      <div class="category-checkbox">
-        <%= check_box_tag 'payment[groups][]', item.id, item.id == @group.id, class: 'checkbox' %>
-        <%= form.label item.name, class: "checkbox" %>
+        <ul>
+          <% @payment.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
       </div>
     <% end %>
-  </div>
 
-  <div>
-    <%= form.submit class: "button is-primary" %>
-  </div>
-<% end %>
+    <div class="field">
+      <%= form.text_field :name,
+                      class: "input",
+                      required: true,
+                      placeholder: "Name",
+                      class: "input px-3 mt-5" %>
+    </div>
+
+    <div class="field">
+      <%= form.number_field :amount,
+                        step: :any,
+                        required: true,
+                        placeholder: "Amount ($)",
+                        class: "input px-3" %>
+    </div>
+
+    <div class="field">
+      <%= form.label "Choose Categories (at least one):", class: "label" %>
+      <% @groups.each do |item| %>
+        <div class="category-checkbox">
+          <%= check_box_tag "payment[groups][]",
+          item.id,
+          item.id == @group.id,
+          class: "checkbox" %>
+          <%= form.label item.name, class: "checkbox" %>
+        </div>
+      <% end %>
+    </div>
+
+    <div>
+      <%= form.submit class: "button is-primary is-medium mt-4" %>
+    </div>
+  <% end %>
+</div>
