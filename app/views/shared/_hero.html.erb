@@ -1,4 +1,4 @@
-<div class="hero is-primary p-2">
+<div class="hero is-medium is-primary p-2">
   <div class="level is-mobile has-text-white">
     <div class="level-left">
       <div class="level-item">
@@ -16,7 +16,7 @@
               "Log Out",
               destroy_user_session_path,
               method: :delete,
-              class: "button is-small"
+              class: "button is-small #{'is-invisible' unless user_signed_in?}"
             ) %>
       </div>
     </div>

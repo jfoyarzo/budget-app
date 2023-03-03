@@ -1,5 +1,9 @@
-<section>
-<h1 class="title">Welcome</h1>
-<%= link_to 'Sign in', new_user_session_path, class: 'button' %>
-<%= link_to 'Sign up', new_user_registration_path, class: 'button' %>
+<section class="splash is-flex is-flex-wrap-wrap is-align-content-center is-justify-content-center">
+  <h1 class="title is-2 app-name mb-5">Budget Buddy</h1>
+  <div class="splash-buttons container is-align-self-stretch is-fluid">
+    <%= link_to "Log in", new_user_session_path, class: "button is-large is-fullwidth mb-3 is-primary" %>
+    <%= link_to "Sign up",
+    new_user_registration_path,
+    class: "button is-large is-fullwidth is-white has-text-grey-light" %>
+  </div>
 </section>

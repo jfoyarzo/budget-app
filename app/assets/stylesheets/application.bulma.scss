@@ -2,8 +2,16 @@
 
 // Import a Google Font
 // @import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+@import url('https://fonts.cdnfonts.com/css/proxima-nova-2');
 
 // Set your brand colors
+$blue: #3778c2;
+$green: #5fb523;
+$grey: #434b54;
+$grey-light: #878a8f;
+$grey-lighter: #f5f6f8;
+
 // $purple: #8A4D76;
 // $pink: #FA7C91;
 // $brown: #757763;
@@ -11,10 +19,11 @@
 // $beige-lighter: #EFF0EB;
 
 // Update Bulma's global variables
-// $family-sans-serif: "Nunito", sans-serif;
+$family-sans-serif: 'Proxima Nova', sans-serif;
 // $grey-dark: $brown;
 // $grey-light: $beige-light;
-// $primary: $purple;
+$primary: $blue;
+$info: $green;
 // $link: $pink;
 // $widescreen-enabled: false;
 // $fullhd-enabled: false;
@@ -43,6 +52,31 @@ body {
   height: 100vh;
 }
 
+.app-name {
+  font-family: 'Bungee', cursive;
+}
+
+.splash {
+  height: 100%;
+}
+
+.splash-buttons {
+  margin-top: 3em;
+}
+
+.sign-in-wrapper {
+  height: 95%;
+
+  form {
+    input[type=email],
+    input[type=password] {
+      border: none !important;
+      border-radius: 0;
+      border-bottom: 2px solid $grey-light;
+    }
+  }
+}
+
 .category-list {
   height: 85%;
   overflow-y: auto;
@@ -58,5 +92,5 @@ body {
 }
 
 .bulma-block-mixin {
-  @include block(1rem);  /* stylelint-disable-line */
+  @include block(1rem); /* stylelint-disable-line */
 }

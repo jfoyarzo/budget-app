@@ -1,4 +1,4 @@
-<% provide(:title, 'Categories') %>
+<% provide(:title, 'Categories'.upcase) %>
 
 <section class="section has-background-grey-light category-list">
   <% unless @groups.present? %>
@@ -31,6 +31,6 @@
     <% end %>
   <% end %>
 </section>
-<div class="is-flex px-2 py-4 btn-container">
-  <%= link_to "Add Category", new_group_path, class: "button is-large is-fullwidth" %>
+<div class="is-flex px-2 py-4 btn-container has-background-info">
+  <%= link_to "Add Category", new_group_path, class: "button is-large is-fullwidth is-white is-outlined" %>
 </div>
