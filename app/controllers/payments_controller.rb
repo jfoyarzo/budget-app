@@ -2,7 +2,7 @@ class PaymentsController < ApplicationController
   before_action :set_group
 
   def index
-    @payments = @group.payments
+    @payments = @group.payments.order(created_at: :desc)
   end
 
   def new
