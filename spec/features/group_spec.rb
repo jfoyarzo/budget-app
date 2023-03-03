@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Groups Page', type: :system do
-  describe 'Group/index' do
+  describe 'Group#index' do
     before :each do
       @user = User.create!(name: 'name', email: 'email@gmail.com', password: 'password',
                            password_confirmation: 'password')

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Payments Page', type: :system do
-  describe 'public_recipes' do
+  describe 'Payment#index' do
     before :each do
       @user = User.create!(name: 'name', email: 'email2@gmail.com', password: 'password')
       @payment = Payment.create!(name: 'test payment', amount: 10.05, author: @user)
