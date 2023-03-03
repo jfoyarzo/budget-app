@@ -52,6 +52,16 @@ body {
   height: 100vh;
 }
 
+.notice,
+.alert {
+  height: 0;
+}
+
+@keyframes fade-out {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
 .app-name {
   font-family: 'Bungee', cursive;
 }
@@ -64,7 +74,7 @@ body {
   margin-top: 3em;
 }
 
-.sign-in-wrapper {
+.form-wrapper {
   height: 95%;
 
   form {
@@ -88,8 +98,13 @@ body {
 }
 
 .category-icon {
-  height: 68px;
-  width: 96px;
+  overflow: hidden;
+
+  img {
+    height: 96px;
+    width: 96px;
+    object-fit: cover;
+  }
 }
 
 .bulma-block-mixin {

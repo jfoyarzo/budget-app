@@ -1,6 +1,6 @@
 <% provide(:title, 'Categories'.upcase) %>
 
-<section class="section has-background-grey-light category-list">
+<section class="section has-background-grey-lighter category-list">
   <% unless @groups.present? %>
     <div class="box">
       <p>You have no categories yet, start by adding one with the button below</p>
@@ -15,13 +15,14 @@
             </p>
           </figure>
           <div class="media-content">
-            <div class="content">
+            <div class="has-text-grey-light">
               <p>
                 <strong><%= group.name %></strong>
               </p>
             </div>
+            <hr class="my-3">
             <div class="level is-mobile">
-              <div class="level-item">
+              <div class="level-item has-text-grey-light">
                 <small>Payments total:
                   <%= number_to_currency(group.payments.sum(:amount)) %></small>
               </div>

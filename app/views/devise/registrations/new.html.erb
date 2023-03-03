@@ -3,14 +3,14 @@
 
 <div
   class="
-    sign-in-wrapper
+    form-wrapper
     px-0
     has-background-grey-lighter
     has-text-centered
     has-text-grey-light
   "
 >
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "has-text-centered mt-5" }) do |f| %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "has-text-centered has-background-grey-lighter" }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="field">
@@ -18,7 +18,7 @@
                    autofocus: true,
                    autocomplete: "name",
                    placeholder: "Name",
-                   class: "input px-3" %>
+                   class: "input px-3 mt-5" %>
     </div>
 
     <div class="field">
@@ -44,7 +44,7 @@
     </div>
 
     <div class="actions">
-      <%= f.submit "Sign up", class: 'button is-primary is-medium mb-3 mt-5' %>
+      <%= f.submit "Sign up", class: "button is-primary is-medium mb-3 mt-5" %>
     </div>
   <% end %>
 

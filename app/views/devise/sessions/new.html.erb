@@ -1,7 +1,7 @@
 <% provide(:title, "Log in".upcase) %>
 <% provide(:link, "/") %>
 
-<div class="sign-in-wrapper px-0 has-background-grey-lighter has-text-centered has-text-grey-light">
+<div class="form-wrapper px-0 has-background-grey-lighter has-text-centered has-text-grey-light">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "has-text-centered" }) do |f| %>
     <div class="field mb-0">
       <%= f.email_field :email,
