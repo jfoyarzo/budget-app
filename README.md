@@ -187,7 +187,7 @@ If you like this project please consider giving it a star!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-Original design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella).
+Original design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella).<br>
 I would like to thank [Microverse](https://www.microverse.org/) for the opportunity.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
