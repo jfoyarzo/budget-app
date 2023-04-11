@@ -25,7 +25,7 @@
 
 # 📖 Budget Pal (rails app) <a name="about-project"></a>
 
-**Budget Pal** is a web app for keeping track of payments, where users can register, create categories, and add payments to one or more category. It also displays the total amount spent on each category.
+**Budget Pal** is a web app for keeping track of payments, where users can register, create categories, and add payments to one or more category. It also displays the total amount spent on each category. Ruby on Rails was used for the backend/frontend of the app and bulma-css for styles. Also uses the devise gem for authentication
 
 
 ## 🛠 Built With <a name="built-with"></a>
